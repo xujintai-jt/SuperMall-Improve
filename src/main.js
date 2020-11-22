@@ -17,6 +17,12 @@ import VueLazyload from 'vue-lazyload'
 //登录请求
 import axios from 'axios'
 axios.defaults.baseURL = "https://admin.w.ruiztech.cn:4443/ruiz"
+axios.interceptors.request.use(config => {
+  // console.log(config);
+  // console.log(window.sessionStorage.getItem('token'));
+  config.Authorization = window.sessionStorage.getItem('token')
+  return config
+})
 Vue.prototype.$http = axios
 
 Vue.config.productionTip = false

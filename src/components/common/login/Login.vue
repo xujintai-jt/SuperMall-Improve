@@ -6,26 +6,25 @@
  * @Description: 文件说明
 -->
 <template>
-  <el-form
-    :model="dataForm"
-    :rules="dataRule"
-    ref="dataForm"
-    label-width="70px"
-    class="demo-ruleForm"
-  >
-    <el-form-item label="手机号" prop="mobile">
-      <el-input v-model="dataForm.mobile" size="small" placeholder="请输入手机号码"></el-input>
-    </el-form-item>
+  <div id="login">
+    <div class="img">
+      <img src="~assets/img/hzw.jpg" alt />
+    </div>
+    <el-form :model="dataForm" :rules="dataRule" ref="dataForm" label-width="70px">
+      <el-form-item label="手机号" prop="mobile">
+        <el-input v-model="dataForm.mobile" size="small" placeholder="请输入手机号码"></el-input>
+      </el-form-item>
 
-    <el-form-item label="密码" prop="password" size="small">
-      <el-input v-model="dataForm.password" type="password" placeholder="请输入短信验证码"></el-input>
-    </el-form-item>
+      <el-form-item label="密码" prop="password" size="small">
+        <el-input v-model="dataForm.password" type="password" placeholder="请输入密码"></el-input>
+      </el-form-item>
 
-    <el-form-item>
-      <el-button type="primary" @click="loginForm('dataForm')">登录</el-button>
-      <el-button type="info" @click="resetForm('dataForm')">重置</el-button>
-    </el-form-item>
-  </el-form>
+      <el-form-item>
+        <el-button type="primary" @click="loginForm('dataForm')">登录</el-button>
+        <el-button type="info" @click="resetForm('dataForm')">重置</el-button>
+      </el-form-item>
+    </el-form>
+  </div>
 </template>
 
 <script>
@@ -88,9 +87,22 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.demo-ruleForm {
-  width: 80vw;
-  margin: 0 auto;
-  margin-top: 50px;
+#login {
+  display: flex;
+  flex-direction: column;
+  .img {
+    margin-top: 20%;
+    text-align: center;
+    img {
+      height: 150px;
+      width: 150px;
+    }
+  }
+  .el-form {
+    height: 200px;
+    width: 75vw;
+    margin: 0 auto;
+    margin-top: 10%;
+  }
 }
 </style>
