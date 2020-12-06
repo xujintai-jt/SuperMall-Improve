@@ -41,20 +41,20 @@ export default {
 </script>
 
 <style lang="less" scoped="scoped">
-.cart-nav {
-  color: #fff;
-  background-color: var(--color-high-text);
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  // z-index: 1;
-}
-
 .Cart {
   height: 100vh;
-}
-.cart-scroll {
-  height: calc(100% - 49px - 42px - 42px);
+  .cart-nav {
+    color: #fff;
+    background-color: var(--color-high-text);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    // z-index: 1;
+  }
+
+  .cart-scroll {
+    height: calc(100% - 49px - 42px - 42px);
+  }
 }
 </style>
